@@ -7,19 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF3AF98A29BDE9A400D7EB5A /* statusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AF98929BDE9A400D7EB5A /* statusMenu.swift */; };
+		BF3AF98C29BE493F00D7EB5A /* baywatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AF98B29BE493F00D7EB5A /* baywatch.swift */; };
+		BF3AF98F29BE8DC400D7EB5A /* clientConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AF98E29BE8DC400D7EB5A /* clientConfig.swift */; };
+		BF5C23EA29BB8F2B009526E9 /* switchMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C23E929BB8F2B009526E9 /* switchMenu.swift */; };
+		BF5C23ED29BB922F009526E9 /* userConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C23EC29BB922F009526E9 /* userConfig.swift */; };
+		BF5C23F029BB9538009526E9 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C23EF29BB9538009526E9 /* menu.swift */; };
+		BF5C23F329BBBA3C009526E9 /* dotfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C23F229BBBA3C009526E9 /* dotfiles.swift */; };
+		BF60225529C7447700B563D7 /* setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60225429C7447700B563D7 /* setup.swift */; };
 		BF8DD8E629BA71320061EF01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8DD8E529BA71320061EF01 /* AppDelegate.swift */; };
 		BF8DD8E829BA71320061EF01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8DD8E729BA71320061EF01 /* ViewController.swift */; };
 		BF8DD8EA29BA71390061EF01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF8DD8E929BA71390061EF01 /* Assets.xcassets */; };
-		BF8DD8ED29BA71390061EF01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF8DD8EB29BA71390061EF01 /* Main.storyboard */; };
+		BF8DD8F729BA74040061EF01 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8DD8F629BA74040061EF01 /* main.swift */; };
+		BF8DD8F929BA86A30061EF01 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8DD8F829BA86A30061EF01 /* logo.png */; };
+		BF8DD8FC29BAA8750061EF01 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = BF8DD8FB29BAA8750061EF01 /* Yams */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF3AF98929BDE9A400D7EB5A /* statusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statusMenu.swift; sourceTree = "<group>"; };
+		BF3AF98B29BE493F00D7EB5A /* baywatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baywatch.swift; sourceTree = "<group>"; };
+		BF3AF98E29BE8DC400D7EB5A /* clientConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientConfig.swift; sourceTree = "<group>"; };
+		BF3AF99229BEA03300D7EB5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
+		BF5C23E929BB8F2B009526E9 /* switchMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = switchMenu.swift; sourceTree = "<group>"; };
+		BF5C23EC29BB922F009526E9 /* userConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userConfig.swift; sourceTree = "<group>"; };
+		BF5C23EF29BB9538009526E9 /* menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menu.swift; sourceTree = "<group>"; };
+		BF5C23F229BBBA3C009526E9 /* dotfiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dotfiles.swift; sourceTree = "<group>"; };
+		BF60225429C7447700B563D7 /* setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setup.swift; sourceTree = "<group>"; };
+		BF60225629C7659100B563D7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BF60225829C76AF800B563D7 /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
+		BF60225929C76C9A00B563D7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		BF60225B29C76FEE00B563D7 /* allow_execution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = allow_execution.png; sourceTree = "<group>"; };
 		BF8DD8E229BA71320061EF01 /* baywatch-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "baywatch-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8DD8E529BA71320061EF01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF8DD8E729BA71320061EF01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF8DD8E929BA71390061EF01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BF8DD8EC29BA71390061EF01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF8DD8EE29BA71390061EF01 /* baywatch_app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = baywatch_app.entitlements; sourceTree = "<group>"; };
+		BF8DD8F629BA74040061EF01 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BF8DD8F829BA86A30061EF01 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../Downloads/logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,15 +51,64 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF8DD8FC29BAA8750061EF01 /* Yams in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF5C23EB29BB9215009526E9 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				BF5C23EC29BB922F009526E9 /* userConfig.swift */,
+				BF3AF98E29BE8DC400D7EB5A /* clientConfig.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		BF5C23EE29BB9512009526E9 /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				BF5C23E929BB8F2B009526E9 /* switchMenu.swift */,
+				BF5C23EF29BB9538009526E9 /* menu.swift */,
+				BF3AF98929BDE9A400D7EB5A /* statusMenu.swift */,
+			);
+			path = menu;
+			sourceTree = "<group>";
+		};
+		BF5C23F129BBBA1E009526E9 /* dotfiles */ = {
+			isa = PBXGroup;
+			children = (
+				BF5C23F229BBBA3C009526E9 /* dotfiles.swift */,
+				BF3AF98B29BE493F00D7EB5A /* baywatch.swift */,
+			);
+			path = dotfiles;
+			sourceTree = "<group>";
+		};
+		BF60225329C7446400B563D7 /* setup */ = {
+			isa = PBXGroup;
+			children = (
+				BF60225429C7447700B563D7 /* setup.swift */,
+			);
+			path = setup;
+			sourceTree = "<group>";
+		};
+		BF60225A29C76CA200B563D7 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				BF60225B29C76FEE00B563D7 /* allow_execution.png */,
+				BF60225829C76AF800B563D7 /* demo.png */,
+				BF60225929C76C9A00B563D7 /* logo.png */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		BF8DD8D929BA71310061EF01 = {
 			isa = PBXGroup;
 			children = (
+				BF60225A29C76CA200B563D7 /* src */,
+				BF60225629C7659100B563D7 /* README.md */,
 				BF8DD8E429BA71320061EF01 /* baywatch-app */,
 				BF8DD8E329BA71320061EF01 /* Products */,
 			);
@@ -52,11 +125,17 @@
 		BF8DD8E429BA71320061EF01 /* baywatch-app */ = {
 			isa = PBXGroup;
 			children = (
+				BF60225329C7446400B563D7 /* setup */,
+				BF3AF99129BEA02F00D7EB5A /* Info.plist */,
+				BF8DD8F629BA74040061EF01 /* main.swift */,
 				BF8DD8E529BA71320061EF01 /* AppDelegate.swift */,
 				BF8DD8E729BA71320061EF01 /* ViewController.swift */,
 				BF8DD8E929BA71390061EF01 /* Assets.xcassets */,
-				BF8DD8EB29BA71390061EF01 /* Main.storyboard */,
 				BF8DD8EE29BA71390061EF01 /* baywatch_app.entitlements */,
+				BF8DD8F829BA86A30061EF01 /* logo.png */,
+				BF5C23F129BBBA1E009526E9 /* dotfiles */,
+				BF5C23EE29BB9512009526E9 /* menu */,
+				BF5C23EB29BB9215009526E9 /* utils */,
 			);
 			path = "baywatch-app";
 			sourceTree = "<group>";
@@ -77,6 +156,9 @@
 			dependencies = (
 			);
 			name = "baywatch-app";
+			packageProductDependencies = (
+				BF8DD8FB29BAA8750061EF01 /* Yams */,
+			);
 			productName = "baywatch-app";
 			productReference = BF8DD8E229BA71320061EF01 /* baywatch-app.app */;
 			productType = "com.apple.product-type.application";
@@ -105,6 +187,9 @@
 				Base,
 			);
 			mainGroup = BF8DD8D929BA71310061EF01;
+			packageReferences = (
+				BF8DD8FA29BAA8750061EF01 /* XCRemoteSwiftPackageReference "Yams" */,
+			);
 			productRefGroup = BF8DD8E329BA71320061EF01 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -120,7 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF8DD8EA29BA71390061EF01 /* Assets.xcassets in Resources */,
-				BF8DD8ED29BA71390061EF01 /* Main.storyboard in Resources */,
+				BF8DD8F929BA86A30061EF01 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,18 +218,27 @@
 			files = (
 				BF8DD8E829BA71320061EF01 /* ViewController.swift in Sources */,
 				BF8DD8E629BA71320061EF01 /* AppDelegate.swift in Sources */,
+				BF3AF98C29BE493F00D7EB5A /* baywatch.swift in Sources */,
+				BF5C23F029BB9538009526E9 /* menu.swift in Sources */,
+				BF5C23ED29BB922F009526E9 /* userConfig.swift in Sources */,
+				BF60225529C7447700B563D7 /* setup.swift in Sources */,
+				BF3AF98A29BDE9A400D7EB5A /* statusMenu.swift in Sources */,
+				BF3AF98F29BE8DC400D7EB5A /* clientConfig.swift in Sources */,
+				BF5C23EA29BB8F2B009526E9 /* switchMenu.swift in Sources */,
+				BF5C23F329BBBA3C009526E9 /* dotfiles.swift in Sources */,
+				BF8DD8F729BA74040061EF01 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BF8DD8EB29BA71390061EF01 /* Main.storyboard */ = {
+		BF3AF99129BEA02F00D7EB5A /* Info.plist */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BF8DD8EC29BA71390061EF01 /* Base */,
+				BF3AF99229BEA03300D7EB5A /* en */,
 			);
-			name = Main.storyboard;
+			name = Info.plist;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -275,8 +369,12 @@
 				DEVELOPMENT_TEAM = SNCB2DMGN2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "baywatch-app/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = NO;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = all;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,8 +400,12 @@
 				DEVELOPMENT_TEAM = SNCB2DMGN2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "baywatch-app/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = NO;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = all;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -339,6 +441,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF8DD8FA29BAA8750061EF01 /* XCRemoteSwiftPackageReference "Yams" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jpsim/Yams.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF8DD8FB29BAA8750061EF01 /* Yams */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF8DD8FA29BAA8750061EF01 /* XCRemoteSwiftPackageReference "Yams" */;
+			productName = Yams;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF8DD8DA29BA71310061EF01 /* Project object */;
 }

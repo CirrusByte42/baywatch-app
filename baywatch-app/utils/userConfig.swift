@@ -14,7 +14,9 @@ public struct userConfig: Codable {
     var is_runner: Bool
 }
 
-
+func defaultUserConfig() -> userConfig{
+    return {userConfig(is_oncall: false, is_runner: false)}()
+}
 func getConfigPath() -> URL{
     let homeDir = FileManager.default.homeDirectoryForCurrentUser
     let defaultPath = ".baywatch/config.yaml"
@@ -36,7 +38,7 @@ func readUserConfig() -> String {
 
 func getUserConfig() -> userConfig{
     let stringUserConfig = readUserConfig()
-    var myUserConfig : userConfig = {userConfig(is_oncall: false, is_runner: false)}()
+    var myUserConfig : userConfig = defaultUserConfig()
     
     let decoder = YAMLDecoder()
     do {
@@ -45,7 +47,7 @@ func getUserConfig() -> userConfig{
     }
     catch {
         /* handle if there are any errors */
-        print("error :  \(error)")
+        print("Error while reading user:  \(error) => defaultUserConfig returned")
     }
     return myUserConfig
 }

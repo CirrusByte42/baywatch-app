@@ -23,7 +23,7 @@ func getClientConfigPath(client: String) -> URL{
 
     return configUrl
 }
-func isClientConfig(client: String) -> Bool{
+func isClientAsConfig(client: String) -> Bool{
     if readClientConfig(client: client) == nil{
         return false
     }

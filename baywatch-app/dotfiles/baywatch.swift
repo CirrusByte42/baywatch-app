@@ -31,7 +31,10 @@ func openClientTerminal(client: String){
 func openClientTerminalAndExecuteCommand(client: String, command : String){
     // Method 1
     let path = getClientPath(client: client)
-    
+    openPathTerminalAndExecuteCommand(path: path, command: command)
+}
+
+func openPathTerminalAndExecuteCommand(path: URL, command : String){
     let terminalScript = """
     cd "\(path.relativePath)"
     direnv allow
@@ -53,6 +56,8 @@ func openClientTerminalAndExecuteCommand(client: String, command : String){
         })
     }
 }
+
+
 func baywatchsetupInClientTerminal(client: String){
     openClientTerminalAndExecuteCommand(client: client, command: "baywatch setup")
 }

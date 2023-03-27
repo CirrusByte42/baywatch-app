@@ -27,15 +27,19 @@ func getDotfilesPath() -> URL{
 
 func clientList() -> [String] {
     var clientList : [String] = []
+    // Avoid trying to fetch client if the repo is not clone yet
+    if !isBaywatchDotfilesSetuped(){
+        return clientList
+    }
+    
+    // Fetching client names
     let fm = FileManager.default
     let dotPath = getDotfilesPath()
-    print("List folders \(dotPath) \(dotPath.absoluteString)")
     do {
         let items = try fm.contentsOfDirectory(at: dotPath, includingPropertiesForKeys: nil)
 
         for item in items {
             if item.isDirectory {
-//                print("Found \(item.lastPathComponent)")
                 clientList.append(item.lastPathComponent)
             }
         }
@@ -43,7 +47,8 @@ func clientList() -> [String] {
             clientList = clientList.filter { $0 != exceptions[k] }
         }
     } catch {
-        print("Error \(error)")
+        print("Error fetching clients \(error)")
+        return clientList
     }
     return clientList
 }

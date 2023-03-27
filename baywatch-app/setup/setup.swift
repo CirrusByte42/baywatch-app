@@ -74,13 +74,30 @@ func createDotBaywatch(){
 }
 
 func createConfig(){
-    let defaultUserConfig : userConfig = {userConfig(is_oncall: false, is_runner: false)}()
+    let defaultUserConfig : userConfig = defaultUserConfig()
     updateConfig(config: defaultUserConfig)
 }
 
 func cloneBaywatchDotfiles(){
-    let dbwURL = getDotBaywatchPath()
-    _ = shell(path: dbwURL, "git clone git@github.com:padok-team/baywatch-dotfiles.git")
+    let command = "git clone git@github.com:padok-team/baywatch-dotfiles.git"
+    let path = getDotBaywatchPath()
+    if !isSshRequieredPassword(){
+        // Clone the repo in background, you does not need to enter the password
+        _ = shell(path: path, command)
+    }
+    else{
+        print("Password is required")
+        openPathTerminalAndExecuteCommand(path: path, command: command)
+    }
+}
+
+func isSshRequieredPassword() -> Bool{
+    let dbwUrl = FileManager.default.homeDirectoryForCurrentUser
+    let output = shell(path: dbwUrl,"test $(ssh-keygen -y -P '' -f ~/.ssh/id_rsa >/dev/null 2>&1)$? -ne 0 && echo 1 || echo 0" )
+    let result = output.dropLast(1)
+    let intResult =  Int(result) ?? 1
+    let boolResult = intResult != 0
+    return boolResult
 }
 
 func alertBaywatchCli(){

@@ -42,6 +42,8 @@ class ClientMenuItem : NSMenuItem {
         self.asConfig = isClientAsConfig(client: clientName)
         
         super.init(title: self.Name, action: #selector(AppDelegate.noAction), keyEquivalent: "")
+        
+       
     
         self.tag = menuTags.CLIENT.rawValue
         createSubmenu()
@@ -62,6 +64,24 @@ class ClientMenuItem : NSMenuItem {
     func hide(user: userConfig){
         self.isHidden = needToHideClient(user: user, client: self.Name)
     }
+    
+    func onCheckStatusUnknown(){
+        self.offStateImage = NSImage(named: NSImage.statusNoneName)// "⚪️"
+    }
+    
+    func onCheckSucess(){
+        self.offStateImage = NSImage(named: NSImage.statusAvailableName) //"🟢"
+    }
+    
+    func onCheckFailed(){
+        self.offStateImage = NSImage(named: NSImage.statusUnavailableName) // "🔴"
+    }
+    
+//    TODO - Setup a file to save last_check status to print the good color
+//    Usage example
+//    let parentItem = item.parent as! ClientMenuItem
+//    parentItem.onCheckFailed()
+//    parentItem.onCheckSucess()
 }
 
 extension AppDelegate{

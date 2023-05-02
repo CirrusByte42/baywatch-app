@@ -61,6 +61,10 @@ class BaywatchMenu: NSMenu, NSMenuDelegate{
         
         self.addItem(NSMenuItem.separator())
         // Add refresh button
+        self.addItem(NSMenuItem(title: "Setup User", action: #selector(AppDelegate.baywatchSetupUser), keyEquivalent: "u"))
+        // Add refresh button
+        self.addItem(NSMenuItem(title: "Check all", action: #selector(AppDelegate.baywatchCheckAll), keyEquivalent: "a"))
+        // Add refresh button
         self.addItem(NSMenuItem(title: "Refresh", action: #selector(AppDelegate.refreshMenu), keyEquivalent: "r"))
         // Add quit button
         self.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
@@ -139,6 +143,16 @@ class BaywatchMenu: NSMenu, NSMenuDelegate{
 }
 
 extension AppDelegate{
+    @objc func baywatchSetupUser() {
+        let path = getDotfilesPath()
+        openPathTerminalAndExecuteCommand(path: path, command: "baywatch setup-user")
+    }
+    
+    @objc func baywatchCheckAll() {
+        let path = getDotfilesPath()
+        openPathTerminalAndExecuteCommand(path: path, command: "baywatch check_all")
+    }
+    
     @objc func refreshMenu() {
         let menu = self.statusItem.menu as! BaywatchMenu
         menu.refresh()

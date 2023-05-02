@@ -27,7 +27,7 @@ class StatusMenuItem : GitMenuItem {
         
         super.init(title: currentTitle, action: #selector(appDelegate.noAction) , keyEquivalent: "", appDelegate: appDelegate)
         
-        self.state = status ? NSControl.StateValue.on : NSControl.StateValue.on
+        self.state = status ? NSControl.StateValue.on : NSControl.StateValue.off
         self.tag = menuTags.STATUS.rawValue
     }
     
@@ -44,20 +44,20 @@ class StatusMenuItem : GitMenuItem {
         if newStatus != self.status{
             self.status = newStatus
             self.title = self.status ? greenTitle : redTitle
-            self.state = self.status ? NSControl.StateValue.on : NSControl.StateValue.on
+            self.state = self.status ? NSControl.StateValue.on : NSControl.StateValue.off
             self.submenu?.items[0].action = self.status ? nil : #selector(self.appDelegate!.gitPull)
         }
-        print("End update")
     }
 }
 
 extension AppDelegate{
     @objc func gitPull() {
         let command = "git pull"
-        let path = getDotBaywatchPath()
+        let path = getDotfilesPath()
         if !isSshRequieredPassword(){
             // Clone the repo in background, you does not need to enter the password
-            _ = shell(path: path, command)
+            let out = shell(path: path, command)
+            print("cloning ...",path,out)
         }
         else{
             print("Password is required")

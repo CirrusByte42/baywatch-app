@@ -50,5 +50,3 @@ If only terminal command is enabled for a client means this client is not yet co
 <p align="center">
 <img src="src/allow_execution.png" alt="screenshot" width="75%">
 <p align="center">
-
-

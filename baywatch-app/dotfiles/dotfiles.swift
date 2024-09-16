@@ -9,29 +9,28 @@ import Foundation
 
 extension URL {
     var isDirectory: Bool {
-       (try? resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory == true
+        (try? resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory == true
     }
 }
 
-let exceptions : [String] = [".git","common",".tmpl","bin"]
+let exceptions: [String] = [".git", ".tmpl", "bin", ".vscode", "0-strat-tech", "1-old-clients"]
 
 // Create client structs and usefull functions
 
-func getDotfilesPath() -> URL{
+func getDotfilesPath() -> URL {
     let homeDir = FileManager.default.homeDirectoryForCurrentUser
     let defaultPath = ".baywatch/baywatch-dotfiles/"
     let configUrl = homeDir.appendingPathComponent(defaultPath)
     return configUrl
 }
 
-
 func clientList() -> [String] {
-    var clientList : [String] = []
+    var clientList: [String] = []
     // Avoid trying to fetch client if the repo is not clone yet
-    if !isBaywatchDotfilesSetuped(){
+    if !isBaywatchDotfilesSetuped() {
         return clientList
     }
-    
+
     // Fetching client names
     let fm = FileManager.default
     let dotPath = getDotfilesPath()
@@ -53,12 +52,12 @@ func clientList() -> [String] {
     return clientList
 }
 
-func getHeadCurrentSha() -> String{
+func getHeadCurrentSha() -> String {
     let sha = shell("git rev-parse HEAD")
     return sha
 }
 
-func getLatestRemoteSha() -> String{
+func getLatestRemoteSha() -> String {
     // Update remote repository
     _ = shell("git fetch origin")
     // Get the latest sha
@@ -69,7 +68,7 @@ func getLatestRemoteSha() -> String{
 func isUpToDate() -> Bool {
     let currentSha = getHeadCurrentSha()
     let lastSha = getLatestRemoteSha()
-    if currentSha == lastSha{
+    if currentSha == lastSha {
         return true
     }
     return false
@@ -80,21 +79,20 @@ func shell(_ command: String) -> String {
     return shell(path: path, command)
 }
 
-func shell(path: URL,_ command: String) -> String {
+func shell(path: URL, _ command: String) -> String {
     let task = Process()
     let pipe = Pipe()
-    
+
     task.currentDirectoryURL = path
     task.standardOutput = pipe
     task.standardError = pipe
-    task.arguments = ["-c",command]
+    task.arguments = ["-c", command]
     task.launchPath = "/bin/zsh"
     task.standardInput = nil
     task.launch()
-    
+
     let data = pipe.fileHandleForReading.readDataToEndOfFile()
     let output = String(data: data, encoding: .utf8)!
-    
+
     return output
 }
-

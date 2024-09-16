@@ -8,16 +8,13 @@
 import Foundation
 import Yams
 
-
 public struct userConfig: Codable {
-    var is_oncall: Bool
-    var is_runner: Bool
 }
 
-func defaultUserConfig() -> userConfig{
-    return {userConfig(is_oncall: false, is_runner: false)}()
+func defaultUserConfig() -> userConfig {
+    return {userConfig()}()
 }
-func getConfigPath() -> URL{
+func getConfigPath() -> URL {
     let homeDir = FileManager.default.homeDirectoryForCurrentUser
     let defaultPath = ".baywatch/config.yaml"
     let configUrl = homeDir.appendingPathComponent(defaultPath)
@@ -28,45 +25,41 @@ func readUserConfig() -> String {
     var userConfig = ""
     let configPath = getConfigPath()
     do {
-        userConfig = try String(contentsOf: configPath , encoding: .utf8)
-    }
-    catch {
+        userConfig = try String(contentsOf: configPath, encoding: .utf8)
+    } catch {
         print("error :  \(error)")
     }
     return userConfig
 }
 
-func getUserConfig() -> userConfig{
+func getUserConfig() -> userConfig {
     let stringUserConfig = readUserConfig()
-    var myUserConfig : userConfig = defaultUserConfig()
-    
+    var myUserConfig: userConfig = defaultUserConfig()
+
     let decoder = YAMLDecoder()
     do {
         myUserConfig = try decoder.decode(userConfig.self, from: stringUserConfig)
-        print("[YAML] userConfig", myUserConfig.is_oncall)
-    }
-    catch {
+    } catch {
         /* handle if there are any errors */
         print("Error while reading user:  \(error) => defaultUserConfig returned")
     }
     return myUserConfig
 }
 
-func writeUserConfig(userConfig : String) {
+func writeUserConfig(userConfig: String) {
     let configPath = getConfigPath()
     do {
         try! userConfig.write(to: configPath, atomically: true, encoding: String.Encoding.utf8)
     }
 }
 
-func updateConfig(config: userConfig){
+func updateConfig(config: userConfig) {
     // Encode to yaml
     let encoder = YAMLEncoder()
     do {
         let encodedYAML = try encoder.encode(config)
         writeUserConfig(userConfig: encodedYAML)
-    }
-    catch {
+    } catch {
         print("error :  \(error)")
     }
 }

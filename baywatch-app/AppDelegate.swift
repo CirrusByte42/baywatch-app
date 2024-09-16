@@ -25,14 +25,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let logoIcon = NSImage(named: NSImage.Name("logo_mini"))
             button.image = logoIcon
         }
-        
+
         // 1 - Check if env is well configured
         print("Check config start ...")
-        if !isSetuped(){
+        if !isSetuped() {
             baywatch_app.setup()
         }
         print("Check config finished")
-        
+
         // 2 - Create the menu bar
         let menu = BaywatchMenu()
         menu.initMenu(appDelegate: self)

@@ -50,3 +50,9 @@ If only terminal command is enabled for a client means this client is not yet co
 <p align="center">
 <img src="src/allow_execution.png" alt="screenshot" width="75%">
 <p align="center">
+
+# Sources
+
+## Global shortcut
+
+For global shortcut I watched [this video](https://www.youtube.com/watch?v=oQL9nrzV_Ok). And I used [KeyboardShortcuts](https://github.com/sindresorhus/KeyboardShortcuts) that works's well.  

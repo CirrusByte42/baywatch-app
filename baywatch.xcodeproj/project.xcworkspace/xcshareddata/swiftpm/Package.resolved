@@ -1,0 +1,24 @@
+{
+  "originHash" : "61ff7db76bcafc8023999ce4e0a43c1d49ed03dc958e441f0d93ce74fde34ce3",
+  "pins" : [
+    {
+      "identity" : "keyboardshortcuts",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/KeyboardShortcuts",
+      "state" : {
+        "revision" : "9203a8de359dc64259bdb28cc44af32c15b3fc5b",
+        "version" : "2.2.1"
+      }
+    },
+    {
+      "identity" : "yams",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jpsim/Yams.git",
+      "state" : {
+        "revision" : "f47ba4838c30dbd59998a4e4c87ab620ff959e8a",
+        "version" : "5.0.5"
+      }
+    }
+  ],
+  "version" : 3
+}

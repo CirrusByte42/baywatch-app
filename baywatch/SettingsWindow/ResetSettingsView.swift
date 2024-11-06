@@ -39,7 +39,7 @@ class ResetSettingsView: NSButton, SettingsView {
         if response == .alertFirstButtonReturn {
             // Erase action
             resetUserConfig()
-            
+
             // Refresh setting window
             if let appDelegate = NSApplication.shared.delegate as? AppDelegate {
                 appDelegate.refresh()

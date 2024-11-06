@@ -1,6 +1,6 @@
 //
-//  SearchView.swift
-//  baywatch-app
+//  ClientSearchView.swift
+//  baywatch
 //
 //  Created by thibaut robinet on 16/09/2024.
 //
@@ -9,7 +9,7 @@ import Foundation
 import AppKit
 import Cocoa
 
-class SearchView: NSView, NSSearchFieldDelegate {
+class ClientSearchView: NSView, NSSearchFieldDelegate {
 
     weak var delegate: NSSearchFieldDelegate?
     var searchDelegate: SearchItemViewEditingDelegate?

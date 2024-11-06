@@ -20,6 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Create the StatusBarItem and set the logo
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         updateStatusBarImage()
+
         // Register to listen for updates from the settings window
         NotificationCenter.default.addObserver(self, selector: #selector(updateStatusBarImage), name: Notification.Name("UpdateStatusBarIcon"), object: nil)
 
@@ -29,16 +30,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.menu = menu
 
         // Register global shortcut
-        //        setupGlobalShortcut()
-        initShortcut()
+        initGlobalShortcuts()
     }
 
-    @objc func performMenuShortcutAction() {
-        // This function will be called when Command + L is pressed, even if app is in the background
-        print("Command + L shortcut triggered from the menu!")
-        // Add your custom action here
-    }
-
+    // This function is used to change the Top bar Icon
     @objc func updateStatusBarImage() {
         if let button = self.statusItem.button {
 
@@ -61,77 +56,39 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Clean up before the application exits
     }
 
-    func isMenuVisible() -> Bool {
-        var menu = statusItem.menu as! BaywatchMenu?
+    // Following functions are usefull to hide and show the top Bar menu
+    func initGlobalShortcuts() {
+        KeyboardShortcuts.onKeyUp(for: .openShortcut) {[self] in
+            self.performGlobalAction()
+        }
+    }
+
+    func isTopBarMenuVisible() -> Bool {
+        let menu = statusItem.menu as! BaywatchMenu?
         return menu?.isVisible() ?? false
     }
 
-    @objc func showMenu(_ sender: Any?) {
-        if let button = statusItem.button {
+    func showTopBarMenu(_ sender: Any?) {
+        if statusItem.button != nil {
             if let button = statusItem.button {
                 button.performClick(nil)
             }
         }
     }
 
-    func hideMenu() {
-        if isMenuVisible() {
+    func hideTopBarMenu() {
+        if isTopBarMenuVisible() {
             statusItem.menu?.cancelTracking() // Stop tracking the menu, effectively hiding it
         }
     }
 
-    func initShortcut() {
-        KeyboardShortcuts.onKeyUp(for: .openShortcut) {[self] in
-            self.performGlobalAction()
-        }
-    }
-
     func performGlobalAction() {
-        if !isMenuVisible() {
-            print("Global shortcut : Menu is not visible")
-            self.showMenu(nil)
+        if !isTopBarMenuVisible() {
+            print("Global shortcut triggered: TopBarMenu is now visible")
+            self.showTopBarMenu(nil)
         } else {
-            print("Global shortcut : Menu is visible")
-            hideMenu()
+            print("Global shortcut triggered: Menu is now hidden")
+            hideTopBarMenu()
         }
     }
 }
-//    func setupGlobalShortcut() {
-//        requestAccessibilityPermissions()
-//
-//        // Listen for global key presses using NSEvent's global monitor
-//        NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { [weak self] event in
-//            self?.handleGlobalKeyDownEvent(event)
-//        }
-//
-//        // Optional: Local monitor to work while the app is focused
-//        NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
-//            self?.handleGlobalKeyDownEvent(event)
-//            return event
-//        }
-//    }
-//
-//    func handleGlobalKeyDownEvent(_ event: NSEvent) {
-//        print("Key pressed: \(event.charactersIgnoringModifiers ?? ""), KeyCode: \(event.keyCode), ModifierFlags: \(event.modifierFlags)")
-//        // Check if the Command + Control + M keys are pressed
-//        if event.modifierFlags.contains([.shift, .command]) && event.keyCode == kVK_Space {
-//            self.showMenu(nil)
-//        }
-// }
-//    func requestAccessibilityPermissions() {
-//        let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString: true]
-//        let accessEnabled = AXIsProcessTrustedWithOptions(options)
-//
-//        print(Bundle.main.bundleIdentifier! + ": \(options)")
-//        if !accessEnabled {
-//            // print the app budle identifier
-//            //            print("The app needs accessibility permissions to capture global events. \(options)")
-//        }
-//    }
-// }
-
-//// To use logo asset
-// extension NSImage.Name {
-//    static let logo = NSImage.Name("logo")
-//    static let logo_mini = NSImage.Name("StatusBarIconColored")
-// }

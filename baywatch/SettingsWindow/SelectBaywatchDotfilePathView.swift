@@ -70,6 +70,15 @@ class SelectBaywatchDotfilePathView: NSStackView, SettingsView {
     }
 }
 
+func getBaywatchDotfilesPath() -> URL? {
+    let path = getFavoriteBaywatchDotfilesPath()
+    var url: URL?
+    if FileManager.default.fileExists(atPath: path) {
+        url = URL(fileURLWithPath: path)
+    }
+    return url
+}
+
 func getDefaultDotfilesPath() -> URL {
     let homeDir = FileManager.default.homeDirectoryForCurrentUser
     let defaultPath = ".baywatch/baywatch-dotfiles/"

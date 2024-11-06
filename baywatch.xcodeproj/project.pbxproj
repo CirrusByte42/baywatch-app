@@ -7,42 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF3AF98A29BDE9A400D7EB5A /* StatusMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AF98929BDE9A400D7EB5A /* StatusMenuItem.swift */; };
+		BF3AF98A29BDE9A400D7EB5A /* GitStatusMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AF98929BDE9A400D7EB5A /* GitStatusMenuItem.swift */; };
 		BF3AF98C29BE493F00D7EB5A /* baywatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AF98B29BE493F00D7EB5A /* baywatch.swift */; };
-		BF3AF98F29BE8DC400D7EB5A /* clientConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AF98E29BE8DC400D7EB5A /* clientConfig.swift */; };
-		BF5C23ED29BB922F009526E9 /* userConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C23EC29BB922F009526E9 /* userConfig.swift */; };
+		BF3AF98F29BE8DC400D7EB5A /* ClientConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AF98E29BE8DC400D7EB5A /* ClientConfig.swift */; };
 		BF5C23F329BBBA3C009526E9 /* dotfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C23F229BBBA3C009526E9 /* dotfiles.swift */; };
-		BF60225529C7447700B563D7 /* setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60225429C7447700B563D7 /* setup.swift */; };
 		BF8DD8E629BA71320061EF01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8DD8E529BA71320061EF01 /* AppDelegate.swift */; };
 		BF8DD8E829BA71320061EF01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8DD8E729BA71320061EF01 /* ViewController.swift */; };
 		BF8DD8EA29BA71390061EF01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF8DD8E929BA71390061EF01 /* Assets.xcassets */; };
 		BF8DD8F729BA74040061EF01 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8DD8F629BA74040061EF01 /* main.swift */; };
 		BF8DD8F929BA86A30061EF01 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8DD8F829BA86A30061EF01 /* logo.png */; };
 		BF8DD8FC29BAA8750061EF01 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = BF8DD8FB29BAA8750061EF01 /* Yams */; };
-		BFC45CC729CF2E9A000A109B /* CloneMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC45CC629CF2E9A000A109B /* CloneMenuItem.swift */; };
+		BFC45CC729CF2E9A000A109B /* GitCloneMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC45CC629CF2E9A000A109B /* GitCloneMenuItem.swift */; };
 		BFC45CCA29CF2EC9000A109B /* GitMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC45CC929CF2EC9000A109B /* GitMenuItem.swift */; };
 		BFCF9D5929CE812F00364251 /* BaywatchMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF9D5829CE812F00364251 /* BaywatchMenu.swift */; };
 		BFE3930329CF677E00A9A3E3 /* ClientMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE3930229CF677E00A9A3E3 /* ClientMenuItem.swift */; };
 		D91D2E662C98E6C000D95814 /* SettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91D2E652C98E6C000D95814 /* SettingsWindow.swift */; };
-		D91D2E682C98E7C000D95814 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91D2E672C98E7C000D95814 /* User.swift */; };
 		D91ECEC02CD1AD6A0098F2AB /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = D91ECEBF2CD1AD6A0098F2AB /* KeyboardShortcuts */; };
 		D938EE2B2CD980D500829476 /* SelectTerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938EE2A2CD980C000829476 /* SelectTerminalView.swift */; };
 		D938EE2D2CD980F900829476 /* EnableColoredTopBarIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938EE2C2CD980EB00829476 /* EnableColoredTopBarIconView.swift */; };
 		D938EE2F2CD9811300829476 /* ResetSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938EE2E2CD9810B00829476 /* ResetSettingsView.swift */; };
 		D938EE312CD9813100829476 /* SelectBaywatchDotfilePathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938EE302CD9812400829476 /* SelectBaywatchDotfilePathView.swift */; };
-		D99898A02C97973B008E10A8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998989F2C97973B008E10A8 /* SearchView.swift */; };
-		D99898A22C97A3E2008E10A8 /* SearchMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99898A12C97A3E2008E10A8 /* SearchMenuItem.swift */; };
+		D938EE362CDBCA1900829476 /* DefaultMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938EE352CDBCA1100829476 /* DefaultMenu.swift */; };
+		D99898A02C97973B008E10A8 /* ClientSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998989F2C97973B008E10A8 /* ClientSearchView.swift */; };
+		D99898A22C97A3E2008E10A8 /* ClientSearchMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99898A12C97A3E2008E10A8 /* ClientSearchMenuItem.swift */; };
 		D9A6EF2B2C9A1D5C00F4BEB1 /* Issues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6EF2A2C9A1D5300F4BEB1 /* Issues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BF3AF98929BDE9A400D7EB5A /* StatusMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuItem.swift; sourceTree = "<group>"; };
+		BF3AF98929BDE9A400D7EB5A /* GitStatusMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitStatusMenuItem.swift; sourceTree = "<group>"; };
 		BF3AF98B29BE493F00D7EB5A /* baywatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baywatch.swift; sourceTree = "<group>"; };
-		BF3AF98E29BE8DC400D7EB5A /* clientConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientConfig.swift; sourceTree = "<group>"; };
+		BF3AF98E29BE8DC400D7EB5A /* ClientConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientConfig.swift; sourceTree = "<group>"; };
 		BF3AF99229BEA03300D7EB5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
-		BF5C23EC29BB922F009526E9 /* userConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userConfig.swift; sourceTree = "<group>"; };
 		BF5C23F229BBBA3C009526E9 /* dotfiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dotfiles.swift; sourceTree = "<group>"; };
-		BF60225429C7447700B563D7 /* setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setup.swift; sourceTree = "<group>"; };
 		BF60225629C7659100B563D7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BF60225829C76AF800B563D7 /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
 		BF60225929C76C9A00B563D7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
@@ -54,23 +50,23 @@
 		BF8DD8EE29BA71390061EF01 /* baywatch_app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = baywatch_app.entitlements; sourceTree = "<group>"; };
 		BF8DD8F629BA74040061EF01 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BF8DD8F829BA86A30061EF01 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = src/logo.png; sourceTree = SOURCE_ROOT; };
-		BFC45CC629CF2E9A000A109B /* CloneMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloneMenuItem.swift; sourceTree = "<group>"; };
+		BFC45CC629CF2E9A000A109B /* GitCloneMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCloneMenuItem.swift; sourceTree = "<group>"; };
 		BFC45CC929CF2EC9000A109B /* GitMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitMenuItem.swift; sourceTree = "<group>"; };
 		BFCF9D5829CE812F00364251 /* BaywatchMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaywatchMenu.swift; sourceTree = "<group>"; };
 		BFE3930229CF677E00A9A3E3 /* ClientMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMenuItem.swift; sourceTree = "<group>"; };
 		D91D2E652C98E6C000D95814 /* SettingsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindow.swift; sourceTree = "<group>"; };
-		D91D2E672C98E7C000D95814 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D938EE2A2CD980C000829476 /* SelectTerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTerminalView.swift; sourceTree = "<group>"; };
 		D938EE2C2CD980EB00829476 /* EnableColoredTopBarIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableColoredTopBarIconView.swift; sourceTree = "<group>"; };
 		D938EE2E2CD9810B00829476 /* ResetSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetSettingsView.swift; sourceTree = "<group>"; };
 		D938EE302CD9812400829476 /* SelectBaywatchDotfilePathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBaywatchDotfilePathView.swift; sourceTree = "<group>"; };
-		D998989F2C97973B008E10A8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		D99898A12C97A3E2008E10A8 /* SearchMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMenuItem.swift; sourceTree = "<group>"; };
+		D938EE352CDBCA1100829476 /* DefaultMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMenu.swift; sourceTree = "<group>"; };
+		D998989F2C97973B008E10A8 /* ClientSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientSearchView.swift; sourceTree = "<group>"; };
+		D99898A12C97A3E2008E10A8 /* ClientSearchMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientSearchMenuItem.swift; sourceTree = "<group>"; };
 		D9A6EF2A2C9A1D5300F4BEB1 /* Issues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D91ECEC12CD1ADD00098F2AB /* model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = model; sourceTree = "<group>"; };
+		D91ECEC12CD1ADD00098F2AB /* Shortcuts */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Shortcuts; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,22 +82,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BF5C23EB29BB9215009526E9 /* utils */ = {
+		BF5C23EB29BB9215009526E9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				BF3AF98E29BE8DC400D7EB5A /* clientConfig.swift */,
+				BF3AF98E29BE8DC400D7EB5A /* ClientConfig.swift */,
 			);
-			path = utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
-		BF5C23EE29BB9512009526E9 /* menu */ = {
+		BF5C23EE29BB9512009526E9 /* TopBarMenu */ = {
 			isa = PBXGroup;
 			children = (
-				BFE3930129CF673400A9A3E3 /* client */,
-				BFC45CC829CF2EA3000A109B /* git */,
+				D938EE342CDBC93800829476 /* Default */,
+				BFE3930129CF673400A9A3E3 /* Client */,
+				BFC45CC829CF2EA3000A109B /* Git */,
 				BFCF9D5829CE812F00364251 /* BaywatchMenu.swift */,
 			);
-			path = menu;
+			path = TopBarMenu;
 			sourceTree = "<group>";
 		};
 		BF5C23F129BBBA1E009526E9 /* dotfiles */ = {
@@ -111,14 +108,6 @@
 				BF3AF98B29BE493F00D7EB5A /* baywatch.swift */,
 			);
 			path = dotfiles;
-			sourceTree = "<group>";
-		};
-		BF60225329C7446400B563D7 /* setup */ = {
-			isa = PBXGroup;
-			children = (
-				BF60225429C7447700B563D7 /* setup.swift */,
-			);
-			path = setup;
 			sourceTree = "<group>";
 		};
 		BF60225A29C76CA200B563D7 /* src */ = {
@@ -152,9 +141,6 @@
 		BF8DD8E429BA71320061EF01 /* baywatch */ = {
 			isa = PBXGroup;
 			children = (
-				D91ECEC12CD1ADD00098F2AB /* model */,
-				D9A6EF292C9A1D4D00F4BEB1 /* jira */,
-				D998989E2C9783BD008E10A8 /* settings */,
 				BF3AF99129BEA02F00D7EB5A /* Info.plist */,
 				BF8DD8F629BA74040061EF01 /* main.swift */,
 				BF8DD8E529BA71320061EF01 /* AppDelegate.swift */,
@@ -163,44 +149,44 @@
 				BF8DD8EE29BA71390061EF01 /* baywatch_app.entitlements */,
 				BF8DD8F829BA86A30061EF01 /* logo.png */,
 				BF5C23F129BBBA1E009526E9 /* dotfiles */,
-				BF5C23EE29BB9512009526E9 /* menu */,
-				BF5C23EB29BB9215009526E9 /* utils */,
-				D92C5F772CAE080F00D9FA1D /* deprecated */,
+				BF5C23EE29BB9512009526E9 /* TopBarMenu */,
+				D998989E2C9783BD008E10A8 /* SettingsWindow */,
+				D91ECEC12CD1ADD00098F2AB /* Shortcuts */,
+				D9A6EF292C9A1D4D00F4BEB1 /* Jira */,
 			);
 			path = baywatch;
 			sourceTree = "<group>";
 		};
-		BFC45CC829CF2EA3000A109B /* git */ = {
+		BFC45CC829CF2EA3000A109B /* Git */ = {
 			isa = PBXGroup;
 			children = (
-				BF3AF98929BDE9A400D7EB5A /* StatusMenuItem.swift */,
-				BFC45CC629CF2E9A000A109B /* CloneMenuItem.swift */,
+				BF3AF98929BDE9A400D7EB5A /* GitStatusMenuItem.swift */,
+				BFC45CC629CF2E9A000A109B /* GitCloneMenuItem.swift */,
 				BFC45CC929CF2EC9000A109B /* GitMenuItem.swift */,
 			);
-			path = git;
+			path = Git;
 			sourceTree = "<group>";
 		};
-		BFE3930129CF673400A9A3E3 /* client */ = {
+		BFE3930129CF673400A9A3E3 /* Client */ = {
 			isa = PBXGroup;
 			children = (
 				BFE3930229CF677E00A9A3E3 /* ClientMenuItem.swift */,
-				D998989F2C97973B008E10A8 /* SearchView.swift */,
-				D99898A12C97A3E2008E10A8 /* SearchMenuItem.swift */,
+				D998989F2C97973B008E10A8 /* ClientSearchView.swift */,
+				D99898A12C97A3E2008E10A8 /* ClientSearchMenuItem.swift */,
+				BF5C23EB29BB9215009526E9 /* Utils */,
 			);
-			path = client;
+			path = Client;
 			sourceTree = "<group>";
 		};
-		D92C5F772CAE080F00D9FA1D /* deprecated */ = {
+		D938EE342CDBC93800829476 /* Default */ = {
 			isa = PBXGroup;
 			children = (
-				BF60225329C7446400B563D7 /* setup */,
-				D91D2E672C98E7C000D95814 /* User.swift */,
-				BF5C23EC29BB922F009526E9 /* userConfig.swift */,
+				D938EE352CDBCA1100829476 /* DefaultMenu.swift */,
 			);
-			path = deprecated;
+			path = Default;
 			sourceTree = "<group>";
 		};
-		D998989E2C9783BD008E10A8 /* settings */ = {
+		D998989E2C9783BD008E10A8 /* SettingsWindow */ = {
 			isa = PBXGroup;
 			children = (
 				D938EE302CD9812400829476 /* SelectBaywatchDotfilePathView.swift */,
@@ -209,15 +195,15 @@
 				D938EE2C2CD980EB00829476 /* EnableColoredTopBarIconView.swift */,
 				D91D2E652C98E6C000D95814 /* SettingsWindow.swift */,
 			);
-			path = settings;
+			path = SettingsWindow;
 			sourceTree = "<group>";
 		};
-		D9A6EF292C9A1D4D00F4BEB1 /* jira */ = {
+		D9A6EF292C9A1D4D00F4BEB1 /* Jira */ = {
 			isa = PBXGroup;
 			children = (
 				D9A6EF2A2C9A1D5300F4BEB1 /* Issues.swift */,
 			);
-			path = jira;
+			path = Jira;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +223,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				D91ECEC12CD1ADD00098F2AB /* model */,
+				D91ECEC12CD1ADD00098F2AB /* Shortcuts */,
 			);
 			name = baywatch;
 			packageProductDependencies = (
@@ -322,23 +308,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFC45CC729CF2E9A000A109B /* CloneMenuItem.swift in Sources */,
+				BFC45CC729CF2E9A000A109B /* GitCloneMenuItem.swift in Sources */,
 				BF8DD8E829BA71320061EF01 /* ViewController.swift in Sources */,
 				BFE3930329CF677E00A9A3E3 /* ClientMenuItem.swift in Sources */,
-				D99898A22C97A3E2008E10A8 /* SearchMenuItem.swift in Sources */,
+				D99898A22C97A3E2008E10A8 /* ClientSearchMenuItem.swift in Sources */,
 				BF8DD8E629BA71320061EF01 /* AppDelegate.swift in Sources */,
 				D938EE2F2CD9811300829476 /* ResetSettingsView.swift in Sources */,
 				BF3AF98C29BE493F00D7EB5A /* baywatch.swift in Sources */,
-				BF5C23ED29BB922F009526E9 /* userConfig.swift in Sources */,
-				D91D2E682C98E7C000D95814 /* User.swift in Sources */,
-				BF60225529C7447700B563D7 /* setup.swift in Sources */,
 				D91D2E662C98E6C000D95814 /* SettingsWindow.swift in Sources */,
 				BFCF9D5929CE812F00364251 /* BaywatchMenu.swift in Sources */,
-				BF3AF98A29BDE9A400D7EB5A /* StatusMenuItem.swift in Sources */,
-				BF3AF98F29BE8DC400D7EB5A /* clientConfig.swift in Sources */,
+				BF3AF98A29BDE9A400D7EB5A /* GitStatusMenuItem.swift in Sources */,
+				BF3AF98F29BE8DC400D7EB5A /* ClientConfig.swift in Sources */,
 				D938EE2D2CD980F900829476 /* EnableColoredTopBarIconView.swift in Sources */,
 				D938EE2B2CD980D500829476 /* SelectTerminalView.swift in Sources */,
-				D99898A02C97973B008E10A8 /* SearchView.swift in Sources */,
+				D99898A02C97973B008E10A8 /* ClientSearchView.swift in Sources */,
+				D938EE362CDBCA1900829476 /* DefaultMenu.swift in Sources */,
 				D938EE312CD9813100829476 /* SelectBaywatchDotfilePathView.swift in Sources */,
 				BFC45CCA29CF2EC9000A109B /* GitMenuItem.swift in Sources */,
 				BF5C23F329BBBA3C009526E9 /* dotfiles.swift in Sources */,

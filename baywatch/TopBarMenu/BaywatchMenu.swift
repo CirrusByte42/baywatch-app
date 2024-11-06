@@ -1,6 +1,6 @@
 //
-//  MyMenu.swift
-//  baywatch-app
+//  BaywatchMenu.swift
+//  baywatch
 //
 //  Created by thibaut robinet on 25/03/2023.
 //
@@ -9,12 +9,14 @@ import Foundation
 import AppKit
 import SwiftUI
 
+// TAGS to know what is itemMenu type
 enum menuTags: Int {
     case CLIENT = 1
     case STATUS = 2
     case CLONE  = 3
 }
 
+// Folder that are printed in the TopBarMenu
 let exceptions: [String] = [".git", ".tmpl", "bin", ".vscode", "0-strat-tech", "1-old-clients"]
 
 protocol SearchItemViewEditingDelegate: AnyObject {
@@ -35,16 +37,16 @@ class BaywatchMenu: NSMenu, NSMenuDelegate, SearchItemViewEditingDelegate {
         self.build()
     }
 
+    // Sort client list
     private func loadData() {
-        // Load client Names
         if baywatchDotfilesExist {
             clientNames = clientList().sorted()
         }
     }
+
+    // Load client names = load folder in the baywatch-dotfiles path
     func clientList() -> [String] {
         var clientList: [String] = []
-
-        // Fetching client names
         let fm = FileManager.default
         if getBaywatchDotfilesPath() == nil {
             return clientList
@@ -67,33 +69,20 @@ class BaywatchMenu: NSMenu, NSMenuDelegate, SearchItemViewEditingDelegate {
         return clientList
     }
 
-    func reloadData() {
-        //        let bde = self.user!.isReady()
-        //        if self.baywatchDotfilesExist != bde {
-        self.refresh()
-        //        } else {
-        //            self.updateStatus()
-        //        }
-    }
-
     func build() {
-        //        self.buildGitMenu()
+        self.buildGitMenu()
         self.buildSearchMenu()
         self.buildClientMenu()
-
-        // Add button to open in vscode
-        self.addItem(NSMenuItem(title: "VSCode", action: #selector(AppDelegate.vscodeMenu), keyEquivalent: "c"))
-        // Add button to access settings
-        self.addItem(NSMenuItem(title: "Settings...", action: #selector(AppDelegate.settingsMenu), keyEquivalent: ","))
-        // Add refresh button
-        self.addItem(NSMenuItem(title: "Refresh", action: #selector(AppDelegate.refreshMenu), keyEquivalent: "r"))
-        // Add quit button
-        self.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        self.buildDefaultMenu()
     }
 
     func buildSearchMenu() {
-        let searchBarItem = SearchMenuItem(searchDelegate: self, appDelegate: self.appDelegate!)
+        let searchBarItem = ClientSearchMenuItem(searchDelegate: self, appDelegate: self.appDelegate!)
         self.addItem(searchBarItem)
+    }
+
+    func isVisible() -> Bool {
+        return menuVisible
     }
 
     func clean() {
@@ -106,21 +95,8 @@ class BaywatchMenu: NSMenu, NSMenuDelegate, SearchItemViewEditingDelegate {
         build()
     }
 
-    //    func updateStatus() {
-    //        for item in self.items {
-    //            if item.tag == menuTags.STATUS.rawValue {
-    //                Task {
-    //                    await (item as! StatusMenuItem).update(appDelegate: self.appDelegate!)
-    //                }
-    //            }
-    //        }
-    //    }
-    //
     func menuNeedsUpdate(_ menu: NSMenu) {
-        reloadData()
-    }
-    func isVisible() -> Bool {
-        return menuVisible
+        self.refresh()
     }
 
     func menuWillOpen(_ menu: NSMenu) {
@@ -151,13 +127,4 @@ extension AppDelegate {
     @objc func vscodeMenu() {
         openVscode(at: getBaywatchDotfilesPath())
     }
-}
-
-func getBaywatchDotfilesPath() -> URL? {
-    let path = getFavoriteBaywatchDotfilesPath()
-    var url: URL?
-    if FileManager.default.fileExists(atPath: path) {
-        url = URL(fileURLWithPath: path)
-    }
-    return url
 }

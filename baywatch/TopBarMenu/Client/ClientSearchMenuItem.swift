@@ -1,6 +1,6 @@
 //
-//  SearchMenuItem.swift
-//  baywatch-app
+//  ClientSearchMenuItem.swift
+//  baywatch
 //
 //  Created by thibaut robinet on 16/09/2024.
 //
@@ -8,7 +8,7 @@
 import Foundation
 import AppKit
 
-class SearchMenuItem: NSMenuItem {
+class ClientSearchMenuItem: NSMenuItem {
     weak var delegate: SearchItemViewEditingDelegate?
 
     required init(coder: NSCoder) {
@@ -18,7 +18,7 @@ class SearchMenuItem: NSMenuItem {
     init(searchDelegate: SearchItemViewEditingDelegate, appDelegate: AppDelegate) {
         super.init(title: "Search", action: #selector(appDelegate.noAction), keyEquivalent: "")
         self.delegate = searchDelegate
-        let searchView = SearchView(frame: NSRect(x: 0, y: 0, width: 300, height: 30), searchDelegate: self.delegate! ) // Specify size here
+        let searchView = ClientSearchView(frame: NSRect(x: 0, y: 0, width: 300, height: 30), searchDelegate: self.delegate! ) // Specify size here
         self.view = searchView
 
     }

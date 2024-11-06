@@ -1,6 +1,6 @@
 //
-//  CloneMenu.swift
-//  baywatch-app
+//  GitCloneMenuItem.swift
+//  baywatch
 //
 //  Created by thibaut robinet on 25/03/2023.
 //
@@ -8,22 +8,22 @@
 import Foundation
 import AppKit
 
-class CloneMenuItem: GitMenuItem {
+class GitCloneMenuItem: GitMenuItem {
     let cloneTitle = "baywtach-dotfiles repository is not yet pull"
 
     required init(coder: NSCoder) {
         super.init(coder: coder)
     }
 
-    init(appDelegate: AppDelegate) {
-        super.init(title: self.cloneTitle, action: #selector(appDelegate.noAction), keyEquivalent: "", appDelegate: appDelegate)
+    init() {
+        super.init(title: self.cloneTitle, action: #selector(AppDelegate.noAction), keyEquivalent: "")
         self.state = NSControl.StateValue.off
         self.tag = menuTags.CLONE.rawValue
     }
 
     override func createSubmenu() {
         let subMenu = NSMenu()
-        let clone = NSMenuItem(title: "Git clone", action: #selector(self.appDelegate!.gitClone), keyEquivalent: "c")
+        let clone = NSMenuItem(title: "Git clone", action: #selector(AppDelegate.gitClone), keyEquivalent: "c")
         subMenu.addItem(clone)
         self.submenu = subMenu
     }

@@ -1,6 +1,6 @@
 //
 //  ClientMenuItem.swift
-//  baywatch-app
+//  baywatch
 //
 //  Created by thibaut robinet on 25/03/2023.
 //

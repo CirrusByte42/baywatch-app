@@ -4,30 +4,48 @@
 
 ## Introduction 
 
-Baywatch app is a tool destined to use easily the baywatch cli. Baywatch cli is useful to switch the context of differents client for the padok run team. But without this tool I kept the decated vscode window opened to quickly respond to the incident. Such as the baywatch app exist, I did not need it again. The app do not consume any cpu and no much RAM, this make it so precious.
+Baywatch app is a tool to optimise context switching between client base on baywatch-dotfiles repository.
 
-This is designed for macos only. The code is written in Swift. Is not an app with windows, is just a menubar, that could be used as shortcut.
+This is designed for macos only. The code is written in Swift. Is not an app with windows, is just a TopBarMenu, that could be used as shortcut.
 
-At the first install, the setup is automatic like this:
+## Features
 
-```
-.baywatch
-├── baywatch-dotfiles
-└── config.yaml
-```
+<p align="center">
+<img src="src/example.jpg" alt="screenshot" width="50%">
+<p align="center">
 
-
-If one of the folder is missing it will be automaticaly recreated.
-The config.yaml files is used to store user data.
+### Git Menu
 
 The first item of the menu indicates if your directory is uptodate, and it add a shortcut to pull it to be updated.
+The git menu will show you how many commits are behind the HEAD commit on the main branch.
+The git menu is refresh when you open baywatch.app menu in async function to not slow down the app.
+
+### Client Menu
+
+The client Menu is composed of a search bar to filter all client items menu. 
+When you selected a client, you could:
+- open the documentation using the browser
+- open the client dotfiles folder in a terminal or in vscode 
+
+### Default Menu
+
+4 functions are available: 
+- VScode to open baywatch-dotfiles repository in vscode.
+- Settings to open Settings Menu.
+- Refresh to force the all view refresh (not very usefull anymore).
+- Quit to close baywatch app. 
+
+### Settings Menu
+
 <p align="center">
-<img src="src/demo.png" alt="screenshot" width="50%">
+<img src="src/settings.jpg" alt="screenshot" width="50%">
 <p align="center">
 
-
-If only terminal command is enabled for a client means this client is not yet configure to used the baywatch cli.
-
+Settings menu allow you to choose :
+- if the baywatch app logo is colored.
+- what is the global shotcut to open baywatch app menu without using mouse.
+- what is your default terminal app that you want to use.
+- where is located your baywatch-dotfiles repository.
 
 ## How to make a new release ?
 

@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  baywatch-app
+//  baywatch
 //
 //  Created by thibaut robinet on 09/03/2023.
 //

@@ -1,6 +1,6 @@
 //
 //  SettingsWindow.swift
-//  baywatch-app
+//  baywatch
 //
 //  Created by thibaut robinet on 17/09/2024.
 

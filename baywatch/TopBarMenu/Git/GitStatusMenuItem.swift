@@ -37,34 +37,66 @@ class GitStatusMenuItem: GitMenuItem {
         subMenu.addItem(clone)
         self.submenu = subMenu
     }
-
-    // Async function to update the status item without lag
-    func update() {
+    
+    func setLoadingStatus() {
         self.title = fetchingTitle
         self.state = NSControl.StateValue.off
-        DispatchQueue.global().async {
-            // Avoid computing status if there is no repository
-            let path = getBaywatchDotfilesPath()
-            if path == nil {
-                print("No baywatch-dotfiles repository found")
-                self.title = self.noRepositoryTitle
-                self.state = NSControl.StateValue.off
-            } else {
-                // Get repository status
-                self.status = isBaywatchDotfilesRepositoryUpToDate()
+        self.offStateImage = NSImage(named: NSImage.statusPartiallyAvailableName) // "🟠"
+    }
+    
+    func setUnkonwnStatus() {
+        self.title = self.noRepositoryTitle
+        self.state = NSControl.StateValue.off
+        self.offStateImage = NSImage(named: NSImage.statusNoneName) // "⚪️"
+    }
+    
+    func setOnStatus(){
+        self.title = self.greenTitle
+        self.state = NSControl.StateValue.on
+        self.submenu?.items[0].action = nil
+    }
+    
+    func setOffStatus(){
+        let commitBehind = commitBehindCount()
+        let customRedTitle = self.redTitle + " \(commitBehind) commits behind"
+        self.title = customRedTitle
+        self.state = NSControl.StateValue.off
+        self.offStateImage = NSImage(named: NSImage.statusUnavailableName) // "🔴"
+        self.submenu?.items[0].action = #selector(AppDelegate.gitPull)
+        self.submenu?.items[0].isEnabled = true
+    }
+    
+    func update() {
+        self.setLoadingStatus()
+        self.updateRepoStatus()
+    }
 
-                // Update the UI on the main thread after fetching the status
-                DispatchQueue.main.async {
-                    if self.status {
-                        self.title = self.greenTitle
-                        self.state = NSControl.StateValue.on
-                        self.submenu?.items[0].action = self.status ? nil : #selector(AppDelegate.gitPull)
-                    } else {
-                        let commitBehind = commitBehindCount()
-                        let customRedTitle = self.redTitle + " \(commitBehind) commits behind"
-                        self.title = customRedTitle
-                        self.state = NSControl.StateValue.off
-                    }
+    // Async function to see if the baywatch path is a git repository
+    func updateRepoStatus() {
+        DispatchQueue.global().async {
+            // Avoid computing status if there is no
+            let notRepo = !isInsideGitRepo()
+            DispatchQueue.main.async {
+                if notRepo {
+                    print("Path is not a current git repository.")
+                    self.setUnkonwnStatus()
+                } else {
+                    self.isRepoUptodate()
+                }
+            }
+        }
+    }
+
+    // Async function tocheck if the baywatch repo is up to date 
+    func isRepoUptodate() {
+        DispatchQueue.global().async {
+            // Get repository status
+            self.status = isBaywatchDotfilesRepositoryUpToDate()
+            DispatchQueue.main.async {
+                if self.status {
+                    self.setOnStatus()
+                } else {
+                    self.setOffStatus()
                 }
             }
         }
@@ -94,11 +126,24 @@ extension AppDelegate {
 func commitBehindCount() -> Int {
     let path = getBaywatchDotfilesPath()
     if path == nil {
-        print("No baywatch-dotfiles repository found")
+        print("No baywatch-dotfiles path definded")
+        // TODO fix the bug in those conditions
         return -1
     }
     let countString = shell(path: path!, "git rev-list --count HEAD..origin/main")
     let count = Int(countString.trimmingCharacters(in: .whitespacesAndNewlines)) ?? 0
     print("\(count) commit behind")
     return count
+}
+
+func isInsideGitRepo() -> Bool {
+    let path = getBaywatchDotfilesPath()
+    if path == nil {
+        print("No baywatch-dotfiles path definded")
+        return false
+    }
+    let boolString = shell(path: path!, "git rev-parse --is-inside-work-tree")
+    let bool = boolString.trimmingCharacters(in: .whitespacesAndNewlines) == "true"
+    print("Is a git repository ? \(bool)")
+    return bool
 }

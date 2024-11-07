@@ -48,7 +48,7 @@ extension BaywatchMenu {
 func getHeadCurrentSha() -> String {
     let path = getBaywatchDotfilesPath()
     if path == nil {
-        print("No baywatch-dotfiles repository found")
+        print("No baywatch-dotfiles path definded")
         return ""
     }
     let sha = shell(path: path!, "git rev-parse HEAD")
@@ -59,7 +59,7 @@ func getHeadCurrentSha() -> String {
 func getLatestRemoteSha() -> String {
     let path = getBaywatchDotfilesPath()
     if path == nil {
-        print("No baywatch-dotfiles repository found")
+        print("No baywatch-dotfiles path definded")
         return ""
     }
     // Update remote repository

@@ -30,7 +30,6 @@
 		D938EE362CDBCA1900829476 /* DefaultMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938EE352CDBCA1100829476 /* DefaultMenu.swift */; };
 		D99898A02C97973B008E10A8 /* ClientSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998989F2C97973B008E10A8 /* ClientSearchView.swift */; };
 		D99898A22C97A3E2008E10A8 /* ClientSearchMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99898A12C97A3E2008E10A8 /* ClientSearchMenuItem.swift */; };
-		D9A6EF2B2C9A1D5C00F4BEB1 /* Issues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6EF2A2C9A1D5300F4BEB1 /* Issues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +61,6 @@
 		D938EE352CDBCA1100829476 /* DefaultMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMenu.swift; sourceTree = "<group>"; };
 		D998989F2C97973B008E10A8 /* ClientSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientSearchView.swift; sourceTree = "<group>"; };
 		D99898A12C97A3E2008E10A8 /* ClientSearchMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientSearchMenuItem.swift; sourceTree = "<group>"; };
-		D9A6EF2A2C9A1D5300F4BEB1 /* Issues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -152,7 +150,6 @@
 				BF5C23EE29BB9512009526E9 /* TopBarMenu */,
 				D998989E2C9783BD008E10A8 /* SettingsWindow */,
 				D91ECEC12CD1ADD00098F2AB /* Shortcuts */,
-				D9A6EF292C9A1D4D00F4BEB1 /* Jira */,
 			);
 			path = baywatch;
 			sourceTree = "<group>";
@@ -196,14 +193,6 @@
 				D91D2E652C98E6C000D95814 /* SettingsWindow.swift */,
 			);
 			path = SettingsWindow;
-			sourceTree = "<group>";
-		};
-		D9A6EF292C9A1D4D00F4BEB1 /* Jira */ = {
-			isa = PBXGroup;
-			children = (
-				D9A6EF2A2C9A1D5300F4BEB1 /* Issues.swift */,
-			);
-			path = Jira;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,7 +316,6 @@
 				BFC45CCA29CF2EC9000A109B /* GitMenuItem.swift in Sources */,
 				BF5C23F329BBBA3C009526E9 /* dotfiles.swift in Sources */,
 				BF8DD8F729BA74040061EF01 /* main.swift in Sources */,
-				D9A6EF2B2C9A1D5C00F4BEB1 /* Issues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

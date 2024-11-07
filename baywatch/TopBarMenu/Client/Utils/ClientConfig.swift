@@ -1,6 +1,6 @@
 //
 //  clientConfig.swift
-//  baywatch-app
+//  baywatch
 //
 //  Created by thibaut robinet on 12/03/2023.
 //

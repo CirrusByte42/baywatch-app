@@ -61,6 +61,8 @@
 		D938EE352CDBCA1100829476 /* DefaultMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMenu.swift; sourceTree = "<group>"; };
 		D998989F2C97973B008E10A8 /* ClientSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientSearchView.swift; sourceTree = "<group>"; };
 		D99898A12C97A3E2008E10A8 /* ClientSearchMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientSearchMenuItem.swift; sourceTree = "<group>"; };
+		D9B1F4D12CDD30E8003F9158 /* example.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = example.jpg; sourceTree = "<group>"; };
+		D9B1F4D22CDD30E8003F9158 /* settings.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = settings.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -111,6 +113,8 @@
 		BF60225A29C76CA200B563D7 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				D9B1F4D12CDD30E8003F9158 /* example.jpg */,
+				D9B1F4D22CDD30E8003F9158 /* settings.jpg */,
 				BF60225B29C76FEE00B563D7 /* allow_execution.png */,
 				BF60225829C76AF800B563D7 /* demo.png */,
 				BF60225929C76C9A00B563D7 /* logo.png */,
@@ -481,7 +485,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.padok.baywatch.dev;
 				PRODUCT_NAME = "$(TARGET_NAME).dev";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -516,7 +520,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.padok.baywatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -21,6 +21,7 @@ let exceptions: [String] = [".git", ".tmpl", "bin", ".vscode", "0-strat-tech", "
 
 protocol SearchItemViewEditingDelegate: AnyObject {
     func searchItemViewDidEdit(_ obj: Notification)
+    func hitEnter()
 }
 
 class BaywatchMenu: NSMenu, NSMenuDelegate, SearchItemViewEditingDelegate {
@@ -71,14 +72,16 @@ class BaywatchMenu: NSMenu, NSMenuDelegate, SearchItemViewEditingDelegate {
 
     func build() {
         self.buildGitMenu()
-        self.buildSearchMenu()
+        let searchBar = self.buildSearchMenu()
         self.buildClientMenu()
+        searchBar.load()
         self.buildDefaultMenu()
     }
 
-    func buildSearchMenu() {
+    func buildSearchMenu() -> ClientSearchView {
         let searchBarItem = ClientSearchMenuItem(searchDelegate: self, appDelegate: self.appDelegate!)
         self.addItem(searchBarItem)
+        return searchBarItem.view as! ClientSearchView
     }
 
     func isVisible() -> Bool {

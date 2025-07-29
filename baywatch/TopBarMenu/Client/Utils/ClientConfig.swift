@@ -8,8 +8,17 @@
 import Foundation
 import Yams
 
+public struct jiraConfig: Codable {
+    var url: String
+    var orgname: String
+}
+
 public struct clientConfig: Codable {
     var name: String
+    var context: String?
+    var butsudan: String?
+    var slack: String?
+    var jira: jiraConfig?
 }
 
 func getClientConfigPath(client: String) -> URL {
@@ -58,7 +67,7 @@ func getClientConfig(client: String) -> clientConfig {
     let decoder = YAMLDecoder()
     do {
         myClientConfig = try decoder.decode(clientConfig.self, from: stringClientConfig!)
-        print("[YAML] clientConfig", myClientConfig)
+        //        print("[YAML] clientConfig", myClientConfig)
     } catch {
         /* handle if there are any errors */
         print("Get error :  \(error)")

@@ -9,7 +9,7 @@ import Foundation
 import AppKit
 import Cocoa
 
-class ClientSearchView: NSView, NSSearchFieldDelegate {
+class ClientSearchView: NSView, NSSearchFieldDelegate, NSControlTextEditingDelegate {
 
     weak var delegate: NSSearchFieldDelegate?
     var searchDelegate: SearchItemViewEditingDelegate?
@@ -44,9 +44,24 @@ class ClientSearchView: NSView, NSSearchFieldDelegate {
         ])
     }
 
+    func load() {
+        if UserDefaults.standard.object(forKey: "lastSearch") != nil {
+            searchField.stringValue = UserDefaults.standard.object(forKey: "lastSearch") as! String
+            searchDelegate!.searchItemViewDidEdit( Notification(name: NSNotification.Name("NSTextFieldDidChangeNotification"), object: searchField, userInfo: nil))
+        }
+    }
+
     func controlTextDidChange(_ obj: Notification) {
         if obj.object is NSSearchField {
             searchDelegate!.searchItemViewDidEdit(obj)
+            UserDefaults.standard.set(searchField.stringValue, forKey: "lastSearch")
         }
+    }
+    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        if commandSelector == #selector(NSResponder.insertNewline(_:)) {
+            searchDelegate!.hitEnter()
+            return true
+        }
+        return false // Let default behavior happen otherwise
     }
 }

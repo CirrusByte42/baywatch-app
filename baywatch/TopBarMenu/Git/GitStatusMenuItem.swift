@@ -37,26 +37,26 @@ class GitStatusMenuItem: GitMenuItem {
         subMenu.addItem(clone)
         self.submenu = subMenu
     }
-    
+
     func setLoadingStatus() {
         self.title = fetchingTitle
         self.state = NSControl.StateValue.off
         self.offStateImage = NSImage(named: NSImage.statusPartiallyAvailableName) // "🟠"
     }
-    
+
     func setUnkonwnStatus() {
         self.title = self.noRepositoryTitle
         self.state = NSControl.StateValue.off
         self.offStateImage = NSImage(named: NSImage.statusNoneName) // "⚪️"
     }
-    
-    func setOnStatus(){
+
+    func setOnStatus() {
         self.title = self.greenTitle
         self.state = NSControl.StateValue.on
         self.submenu?.items[0].action = nil
     }
-    
-    func setOffStatus(){
+
+    func setOffStatus() {
         let commitBehind = commitBehindCount()
         let customRedTitle = self.redTitle + " \(commitBehind) commits behind"
         self.title = customRedTitle
@@ -65,7 +65,7 @@ class GitStatusMenuItem: GitMenuItem {
         self.submenu?.items[0].action = #selector(AppDelegate.gitPull)
         self.submenu?.items[0].isEnabled = true
     }
-    
+
     func update() {
         self.setLoadingStatus()
         self.updateRepoStatus()
@@ -87,7 +87,7 @@ class GitStatusMenuItem: GitMenuItem {
         }
     }
 
-    // Async function tocheck if the baywatch repo is up to date 
+    // Async function tocheck if the baywatch repo is up to date
     func isRepoUptodate() {
         DispatchQueue.global().async {
             // Get repository status

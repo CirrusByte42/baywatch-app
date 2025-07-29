@@ -25,7 +25,11 @@ class ClientMenuItem: NSMenuItem {
     let Commands: [command] = [
         {command(title: "Terminal", action: #selector(AppDelegate.terminal), shortcut: "", showAlways: true)}(),
         {command(title: "VSCode", action: #selector(AppDelegate.code), shortcut: "", showAlways: true)}(),
-        {command(title: "Documentation", action: #selector(AppDelegate.doc), shortcut: "", showAlways: true)}()
+        // {command(title: "Documentation", action: #selector(AppDelegate.doc), shortcut: "", showAlways: true)}()
+        {command(title: "Context", action: #selector(AppDelegate.context), shortcut: "", showAlways: true)}(),
+        {command(title: "Datadog", action: #selector(AppDelegate.datadog), shortcut: "", showAlways: true)}(),
+        {command(title: "Jira", action: #selector(AppDelegate.jira), shortcut: "", showAlways: true)}(),
+        {command(title: "Slack", action: #selector(AppDelegate.slack), shortcut: "", showAlways: true)}()
     ]
 
     required init(coder: NSCoder) {
@@ -73,6 +77,22 @@ extension AppDelegate {
     }
     @objc func doc(item: NSMenuItem) {
         openDoc(client: item.parent?.title ?? "")
+    }
+    @objc func context(item: NSMenuItem) {
+        let cfg = getClientConfig(client: item.parent?.title ?? "")
+        openBrowser(at: cfg.context!)
+    }
+    @objc func datadog(item: NSMenuItem) {
+        let cfg = getClientConfig(client: item.parent?.title ?? "")
+        openBrowser(at: cfg.butsudan!)
+    }
+    @objc func slack(item: NSMenuItem) {
+        let cfg = getClientConfig(client: item.parent?.title ?? "")
+        openBrowser(at: cfg.slack!)
+    }
+    @objc func jira(item: NSMenuItem) {
+        let cfg = getClientConfig(client: item.parent?.title ?? "")
+        openBrowser(at: cfg.jira!.url)
     }
 }
 

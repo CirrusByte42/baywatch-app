@@ -43,4 +43,36 @@ extension BaywatchMenu {
         }
         update()
     }
+
+    func isOneClientDetected() -> Bool {
+        var count = 0
+        for item in self.items {
+            // check if item is of type ClientMenuItem
+            if item.tag == menuTags.CLIENT.rawValue {
+                if !item.isHidden {
+                    count += 1
+                    print(item.title)
+                }
+            }
+        }
+        return count == 1
+    }
+
+    func getSelectedClient() -> NSMenuItem? {
+        for item in self.items {
+            if item.tag == menuTags.CLIENT.rawValue {
+                if item.isHidden == false {
+                    return item
+                }
+            }
+        }
+        return nil
+    }
+
+    func hitEnter() {
+        if isOneClientDetected() {
+            let item = getSelectedClient()!
+            openVscode(at: getClientPath(client: item.title))
+        }
+    }
 }

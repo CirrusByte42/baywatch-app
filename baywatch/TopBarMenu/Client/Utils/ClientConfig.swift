@@ -13,12 +13,18 @@ public struct jiraConfig: Codable {
     var orgname: String
 }
 
+public struct healthcheckConfig: Codable {
+    var drive_folder_url: String
+    var language: String
+}
+
 public struct clientConfig: Codable {
     var name: String
     var context: String?
     var butsudan: String?
     var slack: String?
     var jira: jiraConfig?
+    var healthcheck: healthcheckConfig?
 }
 
 func getClientConfigPath(client: String) -> URL {
